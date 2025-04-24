@@ -14,12 +14,12 @@ module.exports = function getOrInsert(key, value) {
 	var M = this; // step 1
 
 	// 2. Perform ? RequireInternalSlot(M, [[MapData]]).
-	var has = $mapHas(M); // step 2
+	$mapHas(M); // step 2
 
 	// eslint-disable-next-line no-param-reassign
 	key = CanonicalizeKeyedCollectionKey(key); // step 3
 
-	if (has) { // step 4
+	if ($mapHas(M, key)) { // step 4
 		return $mapGet(M, key); // step 4.a
 	}
 
