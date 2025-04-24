@@ -1,6 +1,6 @@
 {
 	"name": "map.prototype.getorinsert",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "ES Proposal spec-compliant shim for Map.prototype.getOrInsert",
 	"main": "index.js",
 	"exports": {
