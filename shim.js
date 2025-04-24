@@ -16,7 +16,7 @@ module.exports = function shim() {
 	);
 	if (typeof Map === 'function' && Map !== $Map) {
 		define(
-			Map,
+			Map.prototype,
 			{ getOrInsert: polyfill },
 			{ getOrInsert: function () { return Map.prototype.getOrInsert !== polyfill; } }
 		);
