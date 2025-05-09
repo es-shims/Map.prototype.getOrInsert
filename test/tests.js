@@ -77,6 +77,30 @@ module.exports = function (getOrInsert, t) {
 			s2t.end();
 		});
 
+		st.test('WeakSets', { skip: typeof WeakSet !== 'function' }, function (s2t) {
+			var ws = new WeakSet();
+
+			s2t['throws'](
+				function () { getOrInsert(ws); },
+				TypeError,
+				'WeakSet is not a Map'
+			);
+
+			s2t.end();
+		});
+
+		st.test('WeakMaps', { skip: typeof WeakMap !== 'function' }, function (s2t) {
+			var wm = new WeakMap();
+
+			s2t['throws'](
+				function () { getOrInsert(wm); },
+				TypeError,
+				'WeakMap is not a Map'
+			);
+
+			s2t.end();
+		});
+
 		st.end();
 	});
 };
